@@ -13,6 +13,7 @@
 		5F45AB7220DB9B310033BDD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F45AB7120DB9B310033BDD9 /* Assets.xcassets */; };
 		5F45AB7520DB9B310033BDD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F45AB7320DB9B310033BDD9 /* LaunchScreen.storyboard */; };
 		5F45AB7820DB9B310033BDD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F45AB7720DB9B310033BDD9 /* main.m */; };
+		A1C9941C90EEF028123176C2 /* libPods-PictureControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82FD02E45C26C88637D2A814 /* libPods-PictureControl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		5F45AB7420DB9B310033BDD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F45AB7620DB9B310033BDD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F45AB7720DB9B310033BDD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		82FD02E45C26C88637D2A814 /* libPods-PictureControl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PictureControl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1347FC2BE2121ECE7D90B4A /* Pods-PictureControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictureControl/Pods-PictureControl.debug.xcconfig"; sourceTree = "<group>"; };
+		F3CAAEDD4DC06DA6F737AA8E /* Pods-PictureControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictureControl/Pods-PictureControl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C9941C90EEF028123176C2 /* libPods-PictureControl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AB8B8329EF10722B38E4E9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82FD02E45C26C88637D2A814 /* libPods-PictureControl.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5F45AB5C20DB9B2E0033BDD9 = {
 			isa = PBXGroup;
 			children = (
 				5F45AB6720DB9B2E0033BDD9 /* PictureControl */,
 				5F45AB6620DB9B2E0033BDD9 /* Products */,
+				B11B935C5D2F6C0EF7F697CA /* Pods */,
+				4AB8B8329EF10722B38E4E9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +86,15 @@
 			path = PictureControl;
 			sourceTree = "<group>";
 		};
+		B11B935C5D2F6C0EF7F697CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1347FC2BE2121ECE7D90B4A /* Pods-PictureControl.debug.xcconfig */,
+				F3CAAEDD4DC06DA6F737AA8E /* Pods-PictureControl.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F45AB7B20DB9B310033BDD9 /* Build configuration list for PBXNativeTarget "PictureControl" */;
 			buildPhases = (
+				0A3CFDE2E08EFC6423FCFFD3 /* [CP] Check Pods Manifest.lock */,
 				5F45AB6120DB9B2E0033BDD9 /* Sources */,
 				5F45AB6220DB9B2E0033BDD9 /* Frameworks */,
 				5F45AB6320DB9B2E0033BDD9 /* Resources */,
+				2FF5E59A29E2395F61AE5CC2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +161,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A3CFDE2E08EFC6423FCFFD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PictureControl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FF5E59A29E2395F61AE5CC2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PictureControl/Pods-PictureControl-resources.sh",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_miss_etikate.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_2.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PictureControl/Pods-PictureControl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F45AB6120DB9B2E0033BDD9 /* Sources */ = {
@@ -281,6 +354,7 @@
 		};
 		5F45AB7C20DB9B310033BDD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1347FC2BE2121ECE7D90B4A /* Pods-PictureControl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -292,12 +366,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AR.gc.nav.PictureControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5F45AB7D20DB9B310033BDD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3CAAEDD4DC06DA6F737AA8E /* Pods-PictureControl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,7 +384,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AR.gc.nav.PictureControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
